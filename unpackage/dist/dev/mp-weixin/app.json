@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "爱商城",
+    "navigationBarBackgroundColor": "#B50E03",
+    "backgroundColor": "#F8F8F8"
+  },
+  "usingComponents": {}
+}
