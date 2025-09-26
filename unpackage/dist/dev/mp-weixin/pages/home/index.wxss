@@ -1,0 +1,13 @@
+.home {
+  width: 750rpx;
+  height: 100vh;
+  background: saddlebrown;
+}
+.home swiper {
+  width: 750rpx;
+  height: 380rpx;
+}
+.home swiper .swiper-img {
+  width: 100%;
+  height: 100%;
+}

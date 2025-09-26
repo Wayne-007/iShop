@@ -1,6 +1,8 @@
 "use strict";
 Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
 const common_vendor = require("./common/vendor.js");
+const utils_request = require("./utils/request.js");
+require("./uni.promisify.adaptor.js");
 if (!Math) {
   "./pages/home/index.js";
   "./pages/cart/index.js";
@@ -20,6 +22,7 @@ const _sfc_main = {
 };
 function createApp() {
   const app = common_vendor.createSSRApp(_sfc_main);
+  app.config.globalProperties.$request = utils_request.request;
   return {
     app
   };
