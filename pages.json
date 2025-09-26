@@ -1,12 +1,55 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/index/index",
+			"path": "pages/home/index",
 			"style": {
 				"navigationBarTitleText": "爱商城"
 			}
+		}, {
+			"path": "pages/cart/index",
+			"style": {
+				"navigationBarTitleText": "购物车"
+			}
+		}, {
+			"path": "pages/news/index",
+			"style": {
+				"navigationBarTitleText": "更多"
+			}
+		}, {
+			"path": "pages/member/index",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
 		}
 	],
+	"tabBar": {
+		"list": [{
+			"pagePath": "pages/home/index",
+			"text": "首页",
+			"iconPath": "/static/icon/home.png",
+			"selectedIconPath": "/static/icon/home-active.png"
+		}, {
+			"pagePath": "pages/news/index",
+			"text": "资讯",
+			"iconPath": "/static/icon/news.png",
+			"selectedIconPath": "/static/icon/news-active.png"
+		}, {
+			"pagePath": "pages/cart/index",
+			"text": "购物车",
+			"iconPath": "/static/icon/cart.png",
+			"selectedIconPath": "/static/icon/cart-active.png"
+		}, {
+			"pagePath": "pages/member/index",
+			"text": "我的",
+			"iconPath": "/static/icon/member.png",
+			"selectedIconPath": "/static/icon/member-active.png"
+		}],
+		"color": "#f3e2bf",
+		"selectedColor": "#B50E03",
+		"fontSize": "16px",
+		"iconWidth": "24px",
+		"blurEffect": "extralight"
+	},
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "爱商城",

@@ -1,12 +1,46 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/home/index",
+    "pages/cart/index",
+    "pages/news/index",
+    "pages/member/index"
   ],
   "window": {
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "爱商城",
     "navigationBarBackgroundColor": "#B50E03",
     "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页",
+        "iconPath": "/static/icon/home.png",
+        "selectedIconPath": "/static/icon/home-active.png"
+      },
+      {
+        "pagePath": "pages/news/index",
+        "text": "资讯",
+        "iconPath": "/static/icon/news.png",
+        "selectedIconPath": "/static/icon/news-active.png"
+      },
+      {
+        "pagePath": "pages/cart/index",
+        "text": "购物车",
+        "iconPath": "/static/icon/cart.png",
+        "selectedIconPath": "/static/icon/cart-active.png"
+      },
+      {
+        "pagePath": "pages/member/index",
+        "text": "我的",
+        "iconPath": "/static/icon/member.png",
+        "selectedIconPath": "/static/icon/member-active.png"
+      }
+    ],
+    "color": "#f3e2bf",
+    "selectedColor": "#B50E03",
+    "blurEffect": "extralight"
   },
   "usingComponents": {}
 }
