@@ -48,7 +48,8 @@
 		height: calc(100vh - 44px - 50px);
 		/* #endif */
 
-		swiper {
+		swiper,
+		swiper-item {
 			width: 750rpx;
 			height: 380rpx;
 
