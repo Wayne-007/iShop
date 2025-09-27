@@ -6,6 +6,20 @@
 				<img :src="item.image_src" :alt="item.goods_id" mode="widthFix" lazy-load class="swiper-img" />
 			</swiper-item>
 		</swiper>
+
+		<!-- 导航区域 -->
+		<view class="nav">
+			<view v-for="item in navList" class="nav-item" :key="item.text">
+				<view class="icon-box">
+					<view :class="{
+						iconfont:true,
+						[item.className]:true
+						}">
+					</view>
+				</view>
+				<text class="text">{{item.text}}</text>
+			</view>
+		</view>
 	</view>
 </template>
 
@@ -17,6 +31,9 @@
 	import {
 		onLoad
 	} from '@dcloudio/uni-app'
+	import {
+		navList
+	} from './const.js'
 
 	const {
 		proxy
@@ -43,7 +60,6 @@
 	.home {
 		width: 750rpx;
 		height: 100vh;
-		background: saddlebrown;
 		/* #ifdef WEB */
 		height: calc(100vh - 44px - 50px);
 		/* #endif */
@@ -56,6 +72,39 @@
 			.swiper-img {
 				width: 100%;
 				height: 100%;
+			}
+		}
+
+		.nav {
+			display: flex;
+			justify-content: space-between;
+			padding: 8px 0;
+
+			.nav-item {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+
+				.icon-box {
+					width: 120rpx;
+					height: 120rpx;
+					background-color: #B50E03;
+					border-radius: 50%;
+					text-align: center;
+					line-height: 120rpx;
+					margin-bottom: 6px;
+
+					.iconfont {
+						font-size: 60rpx;
+						color: #fff;
+					}
+				}
+
+				.text {
+					font-size: 32rpx;
+				}
 			}
 		}
 	}
