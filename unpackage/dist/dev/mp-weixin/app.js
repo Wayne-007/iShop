@@ -2,6 +2,7 @@
 Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
 const common_vendor = require("./common/vendor.js");
 const utils_request = require("./utils/request.js");
+const utils_common = require("./utils/common.js");
 require("./uni.promisify.adaptor.js");
 if (!Math) {
   "./pages/home/index.js";
@@ -23,6 +24,7 @@ const _sfc_main = {
 function createApp() {
   const app = common_vendor.createSSRApp(_sfc_main);
   app.config.globalProperties.$request = utils_request.request;
+  app.config.globalProperties.$formatNumber = utils_common.formatNumber;
   return {
     app
   };

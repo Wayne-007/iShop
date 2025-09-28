@@ -2,6 +2,9 @@ import App from './App'
 import {
 	request
 } from './utils/request.js'
+import {
+	formatNumber
+} from './utils/common.js'
 
 // #ifndef VUE3
 import Vue from 'vue'
@@ -21,6 +24,7 @@ import './uni.promisify.adaptor'
 export function createApp() {
 	const app = createSSRApp(App)
 	app.config.globalProperties.$request = request
+	app.config.globalProperties.$formatNumber = formatNumber
 	return {
 		app
 	}

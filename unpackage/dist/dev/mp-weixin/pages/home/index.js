@@ -7,6 +7,23 @@ const _sfc_main = {
     const {
       proxy
     } = common_vendor.getCurrentInstance();
+    const goodsList = common_vendor.ref([]);
+    common_vendor.reactive({
+      page: 1,
+      pageSize: 20
+    });
+    const getGoodsList = () => {
+      goodsList.value = [];
+      proxy.$request({
+        url: "/api/public/v1/goods/search"
+      }).then((res) => {
+        const _data = (res == null ? void 0 : res.goods) || [];
+        goodsList.value = goodsList.value.concat(_data);
+        common_vendor.index.__f__("log", "at pages/home/index.vue:81", "getGoodsList===>", goodsList.value);
+      }).catch((err) => {
+        goodsList.value = [];
+      });
+    };
     const swipers = common_vendor.ref([]);
     const getSwipers = () => {
       proxy.$request({
@@ -19,9 +36,10 @@ const _sfc_main = {
     };
     common_vendor.onLoad(() => {
       getSwipers();
+      getGoodsList();
     });
     return (_ctx, _cache) => {
-      return {
+      return common_vendor.e({
         a: common_vendor.f(swipers.value, (item, index, i0) => {
           return {
             a: item.image_src,
@@ -35,8 +53,18 @@ const _sfc_main = {
             b: common_vendor.t(item.text),
             c: item.text
           };
-        })
-      };
+        }),
+        c: common_vendor.f(goodsList.value, (item, k0, i0) => {
+          return {
+            a: item.goods_big_logo,
+            b: common_vendor.t(_ctx.$formatNumber(item.goods_price)),
+            c: common_vendor.t(_ctx.$formatNumber(item.goods_id)),
+            d: common_vendor.t(item.goods_name),
+            e: item.goods_id
+          };
+        }),
+        d: goodsList.value.length
+      }, goodsList.value.length ? {} : {});
     };
   }
 };
