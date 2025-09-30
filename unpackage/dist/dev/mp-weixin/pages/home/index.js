@@ -7,6 +7,12 @@ const _sfc_main = {
     const {
       proxy
     } = common_vendor.getCurrentInstance();
+    const handleNav = (payload) => {
+      common_vendor.index.__f__("log", "at pages/home/index.vue:69", "handleNav===>", payload);
+      common_vendor.index.navigateTo({
+        url: payload.path
+      });
+    };
     const goodsList = common_vendor.ref([]);
     common_vendor.reactive({
       page: 1,
@@ -19,7 +25,6 @@ const _sfc_main = {
       }).then((res) => {
         const _data = (res == null ? void 0 : res.goods) || [];
         goodsList.value = goodsList.value.concat(_data);
-        common_vendor.index.__f__("log", "at pages/home/index.vue:81", "getGoodsList===>", goodsList.value);
       }).catch((err) => {
         goodsList.value = [];
       });
@@ -51,7 +56,8 @@ const _sfc_main = {
           return {
             a: item.className,
             b: common_vendor.t(item.text),
-            c: item.text
+            c: item.text,
+            d: common_vendor.o(($event) => handleNav(item), item.text)
           };
         }),
         c: common_vendor.f(goodsList.value, (item, k0, i0) => {

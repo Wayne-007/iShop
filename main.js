@@ -5,6 +5,7 @@ import {
 import {
 	formatNumber
 } from './utils/common.js'
+import uniIcons from './uni_modules/uni-icons/components/uni-icons/uni-icons.vue'
 
 // #ifndef VUE3
 import Vue from 'vue'
@@ -25,6 +26,7 @@ export function createApp() {
 	const app = createSSRApp(App)
 	app.config.globalProperties.$request = request
 	app.config.globalProperties.$formatNumber = formatNumber
+	app.component('uni-icons',uniIcons)
 	return {
 		app
 	}

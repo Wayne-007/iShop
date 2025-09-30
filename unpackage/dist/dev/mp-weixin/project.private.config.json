@@ -2,7 +2,7 @@
   "libVersion": "3.10.0",
   "projectname": "iShop",
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "coverView": true,
     "lazyloadPlaceholderEnable": false,
     "skylineRenderEnable": false,

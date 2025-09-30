@@ -9,7 +9,7 @@
 
 		<!-- 导航区域 -->
 		<view class="nav">
-			<view v-for="item in navList" class="nav-item" :key="item.text">
+			<view v-for="item in NAV_LIST" class="nav-item" :key="item.text" @click.stop="handleNav(item)">
 				<view class="icon-box">
 					<view :class="{
 						iconfont:true,
@@ -26,22 +26,8 @@
 			<view class="title">
 				推荐商品
 			</view>
-			<view class="hot-goods-list">
-				<view v-for="item in goodsList" class="hot-goods-item" :key="item.goods_id">
-					<image :src="item.goods_big_logo" mode="scaleToFill"></image>
-					<view class="price-box">
-						¥{{$formatNumber(item.goods_price)}}
-						<text class="price-old">¥{{$formatNumber(item.goods_id)}}</text>
-					</view>
-					<view class="goods-title">
-						{{item.goods_name}}
-					</view>
-				</view>
-			</view>
-
-			<view v-if="goodsList.length" class="list-end">
-				~ 我是有底线的哦 ～
-			</view>
+			<!-- 商品列表 -->
+			<GoodsList :goodsList="goodsList" />
 		</view>
 
 	</view>
@@ -57,12 +43,21 @@
 		onLoad
 	} from '@dcloudio/uni-app'
 	import {
-		navList
+		navList as NAV_LIST
 	} from './const.js'
+	import GoodsList from '../../components/goodsList/index.vue'
 
 	const {
 		proxy
 	} = getCurrentInstance()
+	
+	// 点击导航栏
+	const handleNav = payload => {
+		uni.navigateTo({
+			url: payload.path
+		})
+	}
+
 
 	// 获取推荐商品
 	const goodsList = ref([])
@@ -77,8 +72,6 @@
 		}).then(res => {
 			const _data = res?.goods || []
 			goodsList.value = goodsList.value.concat(_data)
-
-			console.log('getGoodsList===>', goodsList.value)
 		}).catch(err => {
 			goodsList.value = []
 		})

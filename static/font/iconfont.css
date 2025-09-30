@@ -45,3 +45,7 @@
 .icon-cart:before {
 	content: "\e70d";
 }
+
+.icon-sousuo:before {
+	content: "\e602";
+}

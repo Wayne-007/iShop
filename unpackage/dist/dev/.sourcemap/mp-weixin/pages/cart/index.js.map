@@ -1,1 +1,1 @@
-{"version":3,"file":"index.js","sources":["pages/cart/index.vue?type=page"],"sourcesContent":["import MiniProgramPage from '/Users/wayne/Documents/HBuilderProjects/iShop/pages/cart/index.vue'\nwx.createPage(MiniProgramPage)"],"names":[],"mappings":";;;;;;;AACA,GAAG,WAAW,eAAe;"}
+{"version":3,"file":"index.js","sources":["pages/cart/index.vue?type=page"],"sourcesContent":["import MiniProgramPage from '/Users/wayne/Documents/MyProject/iShop/pages/cart/index.vue'\nwx.createPage(MiniProgramPage)"],"names":[],"mappings":";;;;;;;AACA,GAAG,WAAW,eAAe;"}
