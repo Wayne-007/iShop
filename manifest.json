@@ -37,7 +37,8 @@
 					"<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
 					"<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
 					"<uses-feature android:name=\"android.hardware.camera\"/>",
-					"<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
+					"<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>",
+					"<uses-permission android:name=\"android.permission.CALL_PHONE\"/>"
 				]
 			},
 			/* ios打包配置 */
@@ -52,9 +53,16 @@
 	"mp-weixin": {
 		"appid": "wx4d460534e3ed569e",
 		"setting": {
-			"urlCheck": false
+			"urlCheck": false,
+			"minified": true,
+			"es6": true
 		},
-		"usingComponents": true
+		"usingComponents": true,
+		"permission": {
+			"scope.userLocation": {
+				"desc": "为了获取更好的体验"
+			}
+		}
 	},
 	"mp-alipay": {
 		"usingComponents": true
@@ -68,5 +76,14 @@
 	"uniStatistics": {
 		"enable": false
 	},
-	"vueVersion": "3"
+	"vueVersion": "3",
+	"h5": {
+		"sdkConfigs": {
+			"maps": {
+				"tencent": {
+					"key": "KESBZ-ZTJRQ-APM5K-4TQVQ-MJAMJ-QRBE7"
+				}
+			}
+		}
+	}
 }

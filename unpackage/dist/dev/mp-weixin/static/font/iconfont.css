@@ -1,9 +1,9 @@
 @font-face {
 	font-family: "iconfont";
 	/* Project id 5031409 */
-	src: url('~@/static/font/iconfont.woff2?t=1758953984985') format('woff2'),
-		url('~@/static/font/iconfont.woff?t=1758953984985') format('woff'),
-		url('~@/static/font/iconfont.ttf?t=1758953984985') format('truetype');
+	src: url('~@/static/font/iconfont.woff2?t=1759298252136') format('woff2'),
+		url('~@/static/font/iconfont.woff?t=1759298252136') format('woff'),
+		url('~@/static/font/iconfont.ttf?t=1759298252136') format('truetype');
 }
 
 .iconfont {
@@ -12,6 +12,14 @@
 	font-style: normal;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-weizhi:before {
+	content: "\e660";
+}
+
+.icon-sousuo:before {
+	content: "\e602";
 }
 
 .icon-chaoshi:before {
@@ -44,8 +52,4 @@
 
 .icon-cart:before {
 	content: "\e70d";
-}
-
-.icon-sousuo:before {
-	content: "\e602";
 }

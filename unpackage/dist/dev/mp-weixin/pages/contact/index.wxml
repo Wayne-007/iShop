@@ -1,1 +1,1 @@
-<view class="contact"></view>
+<view class="contact"><image src="https://www.itcast.cn/2018czydz/images/gywmban.jpg" mode="widthFix" class="top-img"/><view class="info-box"><view class="phone"> 联系电话：<text bindtap="{{a}}">400-618-9030（点击拨打）</text></view><view class="address"> 地址：浙江省浙江市浙江经济开发区4号大街187号鼎盛年华 </view><map id="{{1314}}" latitude="{{b}}" longitude="{{c}}" markers="{{d}}"></map></view></view>
