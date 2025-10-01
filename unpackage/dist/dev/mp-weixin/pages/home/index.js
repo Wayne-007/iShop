@@ -1,6 +1,10 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
 const pages_home_const = require("./const.js");
+if (!Math) {
+  GoodsList();
+}
+const GoodsList = () => "../../components/goodsList/index.js";
 const _sfc_main = {
   __name: "index",
   setup(__props) {
@@ -8,7 +12,6 @@ const _sfc_main = {
       proxy
     } = common_vendor.getCurrentInstance();
     const handleNav = (payload) => {
-      common_vendor.index.__f__("log", "at pages/home/index.vue:69", "handleNav===>", payload);
       common_vendor.index.navigateTo({
         url: payload.path
       });
@@ -44,7 +47,7 @@ const _sfc_main = {
       getGoodsList();
     });
     return (_ctx, _cache) => {
-      return common_vendor.e({
+      return {
         a: common_vendor.f(swipers.value, (item, index, i0) => {
           return {
             a: item.image_src,
@@ -60,17 +63,10 @@ const _sfc_main = {
             d: common_vendor.o(($event) => handleNav(item), item.text)
           };
         }),
-        c: common_vendor.f(goodsList.value, (item, k0, i0) => {
-          return {
-            a: item.goods_big_logo,
-            b: common_vendor.t(_ctx.$formatNumber(item.goods_price)),
-            c: common_vendor.t(_ctx.$formatNumber(item.goods_id)),
-            d: common_vendor.t(item.goods_name),
-            e: item.goods_id
-          };
-        }),
-        d: goodsList.value.length
-      }, goodsList.value.length ? {} : {});
+        c: common_vendor.p({
+          goodsList: goodsList.value
+        })
+      };
     };
   }
 };

@@ -23,7 +23,8 @@
 		}, {
 			"path": "pages/goods/index",
 			"style": {
-				"navigationBarTitleText": "爱超市"
+				"navigationBarTitleText": "爱超市",
+				"enablePullDownRefresh": true
 			}
 		}, {
 			"path": "pages/contact/index",
@@ -74,7 +75,8 @@
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "爱商城",
 		"navigationBarBackgroundColor": "#B50E03",
-		"backgroundColor": "#F8F8F8"
+		"backgroundColor": "#F8F8F8",
+		"enablePullDownRefresh": false
 	},
 	"uniIdRouter": {}
 }

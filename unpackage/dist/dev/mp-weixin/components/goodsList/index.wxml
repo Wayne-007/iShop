@@ -1,0 +1,1 @@
+<view><view class="hot-goods-list"><view wx:for="{{a}}" wx:for-item="item" wx:key="e" class="hot-goods-item"><image src="{{item.a}}" mode="scaleToFill"></image><view class="price-box"> ¥{{item.b}} <text class="price-old">¥{{item.c}}</text></view><view class="goods-title">{{item.d}}</view></view></view><view wx:if="{{b}}" class="list-end"> ~ 我是有底线的哦 ～ </view></view>

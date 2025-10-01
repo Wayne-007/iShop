@@ -1,0 +1,12 @@
+.goods {
+  width: 750rpx;
+  background-color: #cecece;
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  /* WebKit浏览器 */
+}
+.goods::-webkit-scrollbar {
+  display: none;
+}

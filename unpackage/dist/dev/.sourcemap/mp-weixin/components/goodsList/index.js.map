@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sources":["/Users/wayne/Documents/MyProject/iShop/components/goodsList/index.vue?type=component"],"sourcesContent":["import Component from '/Users/wayne/Documents/MyProject/iShop/components/goodsList/index.vue'\nwx.createComponent(Component)"],"names":["Component"],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AACA,GAAG,gBAAgBA,SAAS;"}

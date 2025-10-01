@@ -13,7 +13,7 @@
 			</view>
 		</view>
 
-		<view v-if="goodsList.length" class="list-end">
+		<view v-if="isEnd" class="list-end">
 			~ 我是有底线的哦 ～
 		</view>
 
@@ -29,6 +29,10 @@
 		goodsList: {
 			require: true,
 			type: Array
+		},
+		isEnd: {
+			type: Boolean,
+			default: false
 		}
 	})
 </script>

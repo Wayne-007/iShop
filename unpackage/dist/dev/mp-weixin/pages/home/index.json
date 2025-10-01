@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "爱商城",
-  "usingComponents": {}
+  "usingComponents": {
+    "goods-list": "../../components/goodsList/index"
+  }
 }

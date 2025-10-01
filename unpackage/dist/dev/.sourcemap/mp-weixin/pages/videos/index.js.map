@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sources":["pages/videos/index.vue?type=page"],"sourcesContent":["import MiniProgramPage from '/Users/wayne/Documents/MyProject/iShop/pages/videos/index.vue'\nwx.createPage(MiniProgramPage)"],"names":[],"mappings":";;;;;;;AACA,GAAG,WAAW,eAAe;"}
