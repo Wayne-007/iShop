@@ -50,6 +50,9 @@ page.data-v-12718175 {
   box-sizing: border-box;
   background-color: #ececec;
 }
+.pics .right-box .right-item .item-img.data-v-12718175 {
+  width: 100%;
+}
 .pics .right-box .right-item .item-title.data-v-12718175 {
   font-size: 24rpx;
   height: 72rpx;

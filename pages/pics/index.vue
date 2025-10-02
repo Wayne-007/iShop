@@ -12,14 +12,14 @@
 		<!-- 右边内容 -->
 		<scroll-view scroll-y :show-scrollbar="false" scroll-anchoring class="right-box" :scroll-top="scrollTop"
 			@scroll="handleScroll">
-			<image :src="currentItem?.floor_title?.image_src" mode="bottom left" class="top-img" lazy-load />
-			<view class="right-item" v-for="item in currentItem?.product_list" :key="item.navigator_url">
+			<image :src="currentItem?.floor_title?.image_src" mode="bottom left" class="top-img" lazy-load></image>
+			<view class="right-item" v-for="(item,index) in currentItem?.product_list" :key="item.navigator_url"
+				@click.stop="preViewImg(item,index)">
 				<image :src="item.image_src" class="item-img" lazy-load></image>
 				<view class="item-title">
 					{{`${item.name}：${item.navigator_url}`}}
 				</view>
 			</view>
-
 		</scroll-view>
 	</view>
 </template>
@@ -37,11 +37,25 @@
 		proxy
 	} = getCurrentInstance()
 
+	// 预览图片
+	const preViewImg = (item, index) => {
+		const _urls = []
+		currentItem.value?.product_list.forEach(el => {
+			_urls.push(el.image_src)
+		})
+		uni.previewImage({
+			urls: _urls,
+			current: index,
+			indicator: 'number', //	限APP
+			loop: true, //	限APP
+		})
+	}
+
 	// 获取楼层
 	const floorData = ref([])
 	const currentItem = ref({})
 	const getFloorData = () => {
-		proxy.$request({
+		proxy?.$request({
 			url: '/api/public/v1/home/floordata'
 		}).then(data => {
 			console.log(data)
@@ -142,7 +156,9 @@
 				box-sizing: border-box;
 				background-color: #ececec;
 
-				.item-img {}
+				.item-img {
+					width: 100%;
+				}
 
 				.item-title {
 					font-size: 24rpx;

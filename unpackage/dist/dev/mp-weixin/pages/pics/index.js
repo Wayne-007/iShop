@@ -6,13 +6,28 @@ const _sfc_main = {
     const {
       proxy
     } = common_vendor.getCurrentInstance();
+    const preViewImg = (item, index) => {
+      var _a;
+      const _urls = [];
+      (_a = currentItem.value) == null ? void 0 : _a.product_list.forEach((el) => {
+        _urls.push(el.image_src);
+      });
+      common_vendor.index.previewImage({
+        urls: _urls,
+        current: index,
+        indicator: "number",
+        //	限APP
+        loop: true
+        //	限APP
+      });
+    };
     const floorData = common_vendor.ref([]);
     const currentItem = common_vendor.ref({});
     const getFloorData = () => {
-      proxy.$request({
+      proxy == null ? void 0 : proxy.$request({
         url: "/api/public/v1/home/floordata"
       }).then((data) => {
-        common_vendor.index.__f__("log", "at pages/pics/index.vue:47", data);
+        common_vendor.index.__f__("log", "at pages/pics/index.vue:61", data);
         floorData.value = data || [];
         if (data.length) {
           handleCurrentItem(data[0] || {});
@@ -53,11 +68,12 @@ const _sfc_main = {
           };
         }),
         b: (_b = (_a = currentItem.value) == null ? void 0 : _a.floor_title) == null ? void 0 : _b.image_src,
-        c: common_vendor.f((_c = currentItem.value) == null ? void 0 : _c.product_list, (item, k0, i0) => {
+        c: common_vendor.f((_c = currentItem.value) == null ? void 0 : _c.product_list, (item, index, i0) => {
           return {
             a: item.image_src,
             b: common_vendor.t(`${item.name}：${item.navigator_url}`),
-            c: item.navigator_url
+            c: item.navigator_url,
+            d: common_vendor.o(($event) => preViewImg(item, index), item.navigator_url)
           };
         }),
         d: scrollTop.value,

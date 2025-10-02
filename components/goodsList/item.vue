@@ -2,8 +2,8 @@
 	<view v-for="item in goodsList" class="hot-goods-item" :key="item.goods_id || item.navigator_url">
 		<image :src="item.goods_big_logo || item.image_src" mode="scaleToFill"></image>
 		<view class="price-box">
-			¥{{$formatNumber(item.goods_price)}}
-			<text class="price-old">¥{{$formatNumber(item.goods_id)}}</text>
+			¥{{formatNumber(item.goods_price)}}
+			<text class="price-old">¥{{formatNumber(item.goods_id)}}</text>
 		</view>
 		<view class="goods-title">
 			{{item.goods_name}}
@@ -15,6 +15,9 @@
 	import {
 		defineProps
 	} from 'vue'
+	import {
+		formatNumber
+	} from '@/utils/common.js'
 
 	const props = defineProps({
 		goodsList: Array
