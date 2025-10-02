@@ -1,16 +1,7 @@
 <template>
 	<view>
 		<view class="hot-goods-list">
-			<view v-for="item in goodsList" class="hot-goods-item" :key="item.goods_id">
-				<image :src="item.goods_big_logo" mode="scaleToFill"></image>
-				<view class="price-box">
-					¥{{$formatNumber(item.goods_price)}}
-					<text class="price-old">¥{{$formatNumber(item.goods_id)}}</text>
-				</view>
-				<view class="goods-title">
-					{{item.goods_name}}
-				</view>
-			</view>
+			<Item :goodsList="goodsList" />
 		</view>
 
 		<view v-if="isEnd" class="list-end">
@@ -24,6 +15,7 @@
 	import {
 		defineProps
 	} from 'vue';
+	import Item from './item.vue'
 
 	const props = defineProps({
 		goodsList: {
