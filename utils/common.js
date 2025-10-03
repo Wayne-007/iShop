@@ -8,3 +8,15 @@ export const formatNumber = (num) => {
 		maximumFractionDigits: 2
 	});
 }
+
+// 传入时间戳转成日期
+export const getDateByTime = num => {
+	const _num = num * 1000
+	const _date = new Date(_num)
+
+	const _year = _date.getFullYear()
+	const _month = _date.getMonth() + 1
+	const _day = _date.getDate()
+
+	return `${_year}-${_month<10?'0'+_month:_month}-${_day}`
+}
