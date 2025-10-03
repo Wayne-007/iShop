@@ -1,1 +1,1 @@
-<view class="news"><block wx:for="{{a}}" wx:for-item="item"><view wx:if="{{item.a}}" class="news-item" key="{{item.f}}"><view class="left-box"><image src="{{item.b}}" mode="scaleToFill" class="left-img" lazy-load></image></view><view class="right-box"><view class="title">{{item.c}}</view><view class="right-footer"><text>更新时间：{{item.d}}</text><text>浏览：{{item.e}}</text></view></view></view></block></view>
+<view class="news"><news-item wx:if="{{a}}" u-i="e7b2fd2a-0" bind:__l="__l" u-p="{{a}}"/></view>
