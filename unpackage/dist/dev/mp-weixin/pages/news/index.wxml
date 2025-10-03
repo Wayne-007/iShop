@@ -1,1 +1,1 @@
-<view class="news"><news-item wx:if="{{a}}" u-i="e7b2fd2a-0" bind:__l="__l" u-p="{{a}}"/></view>
+<view class="news"><news-item wx:if="{{b}}" binditemClick="{{a}}" u-i="e7b2fd2a-0" bind:__l="__l" u-p="{{b}}"/></view>

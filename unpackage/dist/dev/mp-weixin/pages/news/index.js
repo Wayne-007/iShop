@@ -8,6 +8,13 @@ const NewsItem = () => "../../components/newsItem/index.js";
 const _sfc_main = {
   __name: "index",
   setup(__props) {
+    const handleItemClick = (payload) => {
+      const pages = getCurrentPages();
+      const currentPage = pages[pages.length - 1];
+      common_vendor.index.navigateTo({
+        url: `/pages/detail/index?goods_id=${payload.goods_id}&from=${currentPage.route}`
+      });
+    };
     const pageInfo = common_vendor.reactive({
       pagenum: 1,
       pagesize: 1e3
@@ -31,7 +38,8 @@ const _sfc_main = {
     });
     return (_ctx, _cache) => {
       return {
-        a: common_vendor.p({
+        a: common_vendor.o(handleItemClick),
+        b: common_vendor.p({
           list: list.value
         })
       };

@@ -1,6 +1,6 @@
 <template>
 	<view class="news">
-		<NewsItem :list="list" />
+		<NewsItem :list="list" @itemClick="handleItemClick" />
 	</view>
 </template>
 
@@ -13,10 +13,20 @@
 	import {
 		request
 	} from '../../utils/request';
-	import {
-		getDateByTime
-	} from '../../utils/common.js'
+
 	import NewsItem from '../../components/newsItem/index.vue'
+
+	const handleItemClick = payload => {
+		// 获取当前页面栈
+		const pages = getCurrentPages();
+		// 获取当前页面实例（栈顶元素）
+		const currentPage = pages[pages.length - 1];
+
+		uni.navigateTo({
+			url: `/pages/detail/index?goods_id=${payload.goods_id}&from=${currentPage.route}`,
+
+		})
+	}
 
 	const pageInfo = reactive({
 		pagenum: 1,

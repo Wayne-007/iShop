@@ -41,6 +41,11 @@
 			"style": {
 				"navigationBarTitleText": "商品视频"
 			}
+		}, {
+			"path": "pages/detail/index",
+			"style": {
+				"navigationBarTitleText": "商品详情"
+			}
 		}
 	],
 	"tabBar": {

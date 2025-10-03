@@ -7,7 +7,8 @@
     "pages/goods/index",
     "pages/contact/index",
     "pages/pics/index",
-    "pages/videos/index"
+    "pages/videos/index",
+    "pages/detail/index"
   ],
   "window": {
     "navigationBarTextStyle": "white",

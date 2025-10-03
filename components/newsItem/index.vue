@@ -1,6 +1,6 @@
 <template>
 	<template v-for="item in list">
-		<view v-if="item.goods_big_logo" class="news-item" :key="item.goods_id">
+		<view v-if="item.goods_big_logo" class="news-item" :key="item.goods_id" @click.stop="handleItemClick(item)">
 			<view class="left-box">
 				<image :src="item.goods_big_logo" mode="scaleToFill" class="left-img" lazy-load></image>
 			</view>
@@ -12,19 +12,27 @@
 					<text>浏览：{{item.goods_price}}</text>
 				</view>
 			</view>
-
 		</view>
 	</template>
 </template>
 
 <script setup>
 	import {
-		defineProps
+		getDateByTime
+	} from '../../utils/common.js'
+	import {
+		defineProps,
+		defineEmits
 	} from 'vue'
 
+	const emits = defineEmits(['itemClick'])
 	const props = defineProps({
 		list: Array
 	})
+
+	const handleItemClick = payload => {
+		emits('itemClick', payload)
+	}
 </script>
 
 <style lang="less">
